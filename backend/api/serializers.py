@@ -188,3 +188,12 @@ class ShoppingCartSerializer(serializers.ModelSerializer):
         context = {'request': request}
         return ShortRecipeSerializer(
             instance.recipe, context=context).data
+
+
+class ShortRecipeSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для краткого отображения сведений о рецепте
+    """
+    class Meta:
+        model = Recipe
+        fields = ('id', 'name', 'image', 'cooking_time')
