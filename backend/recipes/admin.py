@@ -15,16 +15,26 @@ class IngredientAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'measurement_unit')
     list_filter = ('name',)
     search_fields = ('name',)
+
     empty_value_display = '-пусто-'
+
+
+class IngredientInline(admin.TabularInline):
+    model = IngredientAmount
 
 
 @admin.register(Recipe)
 class RecipeAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'author', 'amount_favorites',
                     'amount_tags', 'amount_ingredients')
+    inlines = (IngredientInline,)
     list_filter = ('author', 'name', 'tags')
     search_fields = ('name',)
     empty_value_display = '-пусто-'
+
+    @staticmethod
+    def ingredients(obj):
+        return Ingredient.objects.all()
 
     @staticmethod
     def amount_favorites(obj):
