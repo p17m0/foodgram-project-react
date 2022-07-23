@@ -94,20 +94,20 @@ class RecipeSerializer(serializers.ModelSerializer):
             ingredients_list.append(ingredient_id)
             amount = ingredient['amount']
             if int(amount) <= 0:
-                raise serializers.ValidationError
+                raise serializers.ValidationError('Больше ингредиентов')
 
         tags = data['tags']
         if not tags:
-            raise serializers.ValidationError
+            raise serializers.ValidationError('Должны быть тэги')
         tags_list = []
         for tag in tags:
             if tag in tags_list:
-                raise serializers.ValidationError
+                raise serializers.ValidationError('Уже есть!')
             tags_list.append(tag)
 
         cooking_time = data['cooking_time']
         if int(cooking_time) <= 0:
-            raise serializers.ValidationError
+            raise serializers.ValidationError('Меньше нуля!')
         return data
 
     @staticmethod
