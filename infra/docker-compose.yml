@@ -10,7 +10,7 @@ services:
       - ./.env
 
   backend:
-    image: spitmo/foodgramback:v1
+    image: pitmo/foodgramback:v2
     expose:
       - 8000
     restart: always
