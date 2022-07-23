@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from django.db.models import Sum
 from .services import make_file
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status
@@ -84,19 +85,9 @@ class RecipeViewSet(ModelViewSet):
     @action(detail=False, methods=['get'],
             permission_classes=[IsAuthenticated])
     def download_shopping_cart(self, request):
-        final_list = {}
         ingredients = IngredientAmount.objects.filter(
             recipe__carts__user=request.user).values_list(
             'ingredient__name', 'ingredient__measurement_unit',
             'amount'
-        )
-        for item in ingredients:
-            name = item[0]
-            if name not in final_list:
-                final_list[name] = {
-                    'measurement_unit': item[1],
-                    'amount': item[2]
-                }
-            else:
-                final_list[name]['amount'] += item[2]
-        return make_file(final_list)
+        ).annotate(Sum('amount'))
+        return make_file(ingredients)

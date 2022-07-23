@@ -94,7 +94,7 @@ class RecipeSerializer(serializers.ModelSerializer):
             ingredients_list.append(ingredient_id)
             amount = ingredient['amount']
             if int(amount) <= 0:
-                raise serializers.ValidationError('Больше ингредиентов')
+                raise serializers.ValidationError('Больше веса!')
 
         tags = data['tags']
         if not tags:
