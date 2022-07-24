@@ -120,9 +120,6 @@ docker-compose exec backend python manage.py collectstatic --noinput
 ## Сайт
 
 Сайт доступен по ссылке:
-[http://84.252.137.199/](http://project-foodgram.ddns.net/)
+[http://84.252.137.199/]
 
-## Документация к API
 
-API документация доступна по ссылке (создана с помощью redoc):
-[http://project-foodgram.ddns.net/api/docs/](http://project-foodgram.ddns.net/api/docs/)
