@@ -99,12 +99,6 @@ docker-compose exec backend python manage.py migrate
 docker-compose exec backend python manage.py filldb
 ```
 
-* Загрузите теги:
-
-```bash
-docker-compose exec backend python manage.py load_tags
-```
-
 * Создайте администратора:
 
 ```bash
@@ -120,6 +114,6 @@ docker-compose exec backend python manage.py collectstatic --noinput
 ## Сайт
 
 Сайт доступен по ссылке:
-[http://84.252.137.199/]
+[http://84.252.137.199/, http://myfoodgram.hopto.org/]
 
 
