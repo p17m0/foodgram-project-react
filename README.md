@@ -1,7 +1,5 @@
 # Foodgram - Продуктовый помощник
 
-![example workflow](https://github.com/NIK-TIGER-BILL/foodgram-project-react/actions/workflows/foodgram_workflow.yml/badge.svg)
-
 ## Стек технологий
 
 [![Python](https://img.shields.io/badge/-Python-464646?style=flat-square&logo=Python)](https://www.python.org/)
@@ -99,12 +97,6 @@ docker-compose exec backend python manage.py migrate
 docker-compose exec backend python manage.py filldb
 ```
 
-* Загрузите теги:
-
-```bash
-docker-compose exec backend python manage.py load_tags
-```
-
 * Создайте администратора:
 
 ```bash
@@ -120,9 +112,6 @@ docker-compose exec backend python manage.py collectstatic --noinput
 ## Сайт
 
 Сайт доступен по ссылке:
-[http://84.252.137.199/](http://project-foodgram.ddns.net/)
+[http://84.252.137.199/, http://myfoodgram.hopto.org/]
 
-## Документация к API
 
-API документация доступна по ссылке (создана с помощью redoc):
-[http://project-foodgram.ddns.net/api/docs/](http://project-foodgram.ddns.net/api/docs/)
