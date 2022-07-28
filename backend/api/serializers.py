@@ -113,7 +113,7 @@ class RecipeSerializer(serializers.ModelSerializer):
     @staticmethod
     def create_ingredients(ingredients, recipe):
         instances = [
-            IngredientAmount.objects.filter(
+            IngredientAmount(
                 recipe=recipe, ingredient=ingredient['id'],
                 amount=ingredient['amount']
             )

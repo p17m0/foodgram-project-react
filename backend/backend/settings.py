@@ -16,6 +16,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://*localhost',
+    'https://*localhost',
+    'http://*84.252.137.199/',
+    'https://*84.252.137.199/',
+    'http://*myfoodgram.hopto.org/',
+    'https://*myfoodgram.hopto.org/',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -66,7 +74,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_URLS_REGEX = r'^/api/.*$'
 
 DATABASES = {
     'default': {
