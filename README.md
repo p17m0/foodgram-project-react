@@ -22,7 +22,7 @@ Foodgram это ресурс для публикации рецептов.
 * Склонировать репозиторий на локальную машину:
 
 ```bash
-git clone https://github.com/skarabey147/foodgram-project-react.git
+git clone https://github.com/p17m0/foodgram-project-react.git
 cd foodgram-project-react
 ```
 
